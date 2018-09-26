@@ -1,6 +1,8 @@
-var makeBlinkyDancer = function(top, left, timeBetweenSteps, color) {
-  makeDancer.call(this, top, left, timeBetweenSteps, color);
-
+var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
+  makeDancer.call(this, top, left, timeBetweenSteps);
+  this.$node.addClass('blinky');
+  $(this.$node).append('<img src="blinky1.gif">');
+  
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
   
@@ -18,4 +20,3 @@ makeBlinkyDancer.prototype.step = function() {
   // other effects you can use on a jQuery-wrapped html tag.
   this.$node.toggle();
 };
-

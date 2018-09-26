@@ -1,6 +1,6 @@
 $(document).ready(function() {
   window.dancers = [];
-  window.dancers.push(makeBlinkyDancer, makeLeftToRightDancer, makeBouncingDancer);
+  window.dancingStyles = [];
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -16,28 +16,38 @@ $(document).ready(function() {
      * A new object of the given type will be created and added
      * to the stage.
      */
-    var dancerMakerFunctionName =  $(this).data("dancer-maker-function-name");
+    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
     
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
-    
-    // make a dancer with a random position
-    var randomColor = getRandomColor();
-    //console.log(randomColor);
+    // make dancer at random position
     var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
-      Math.random() * 1000, randomColor
+      $('body').height() * Math.random(),
+      $('body').width() * Math.random(),
+      Math.random() * 1000
     );
-    $('body').append(dancer.$node);
+    $('.danceFloor').append(dancer.$node);
+  });
+  
+  $('#lineUpDancer').on('click', function(event) {
+    $('.dancer').css('top', '700px');
+    $('.bounce').css('top', '700px');
+  });
+  
+  $('#interact').on('click', function(event) {
+    $('.dancer').text('Let\'s party').css('color', 'red');
+  });
+
+  $('.danceFloor').on('mouseover', '.blinky', function(event) {
+    $(this).html('<img src="blinky2.gif">');
+  });
+  
+  $('.danceFloor').on('mouseover', '.lefty', function(event) {
+    $(this).html('<img src="lefty2.gif">');
+  });
+
+  $('.danceFloor').on('mouseover', '.bounce', function(event) {
+    $(this).html('<img src="bouncy2.gif">');
   });
 });
-
-
-function getRandomColor() {
-  var colors = ['red', 'blue', 'green', 'white', 'purple'];
-  var randIndex = Math.floor(Math.random()*4);
-  return colors[randIndex];
-}
-
 
