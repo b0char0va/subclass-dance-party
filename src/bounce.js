@@ -1,7 +1,6 @@
 var BouncingDancer = function(top, left, timeBetweenSteps, color, border) {
   Dancer.call(this, top, left, timeBetweenSteps, color, border);
   this.$node.addClass('bounce');
-  console.log(this.$node[0]);
   $(this.$node).append('<img src="bounce.gif" class="bouncey">');
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
@@ -18,5 +17,5 @@ BouncingDancer.prototype.step = function() {
   // toggle() is a jQuery method to show/hide the <span> tag.
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
-  this.$node.addClass('bouncey');
+  // this.$node.addClass('bouncey');
 };

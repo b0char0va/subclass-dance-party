@@ -32,7 +32,6 @@ body, a:link, a:visited, a:active{
 }
 
 .bouncey {
-  position:fixed;
   left:50%;
   bottom:0;
   margin-top:-25px;
