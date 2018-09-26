@@ -21,8 +21,8 @@ $(document).ready(function() {
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
     // make dancer at random position
-    var randomHeight = Math.random()*(0.5-0.2)+0.2;
-    var randomWidth = Math.random()*(0.8-0.1)+0.1;
+    var randomHeight = Math.random() * (0.5 - 0.2) + 0.2;
+    var randomWidth = Math.random() * (0.8 - 0.1) + 0.1;
     var dancer = new dancerMakerFunction(
       $('body').height() * randomHeight,
       $('body').width() * randomWidth,
