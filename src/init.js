@@ -21,9 +21,11 @@ $(document).ready(function() {
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
     // make dancer at random position
+    var randomHeight = Math.random()*(0.5-0.2)+0.2;
+    var randomWidth = Math.random()*(0.8-0.1)+0.1;
     var dancer = new dancerMakerFunction(
-      $('body').height() * Math.random(),
-      $('body').width() * Math.random(),
+      $('body').height() * randomHeight,
+      $('body').width() * randomWidth,
       Math.random() * 1000
     );
     $('.danceFloor').append(dancer.$node);

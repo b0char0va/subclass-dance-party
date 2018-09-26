@@ -24,8 +24,6 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  /*border:10px solid;*/
-/*  border-radius:50%;*/
   position:absolute;
 }
 
@@ -33,6 +31,20 @@ body, a:link, a:visited, a:active{
   max-height: 100%;
 }
 
-/*.blinky{
-  height: 70px;
-}*/
+.bouncey {
+  position:fixed;
+  left:50%;
+  bottom:0;
+  margin-top:-25px;
+  margin-left:-25px;
+  height: 300px;
+  width: 300px;
+  -webkit-animation:bouncey 1s infinite;
+}
+
+@-webkit-keyframes bouncey {
+  0%       { bottom:5px; }
+  25%, 75% { bottom:15px; }
+  50%      { bottom:20px; }
+  100%     {bottom:0;}
+}

@@ -1,19 +1,20 @@
-var makeLeftToRightDancer = function(top, left, timeBetweenSteps) {
-  makeDancer.call(this, top, left, timeBetweenSteps);
+var LeftToRightDancer = function(top, left, timeBetweenSteps) {
+  Dancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass('lefty');
   this.counter = 0;
   $(this.$node).append('<img src="lefty.gif">');
+  console.log(this.$node);
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
 };
 
-makeLeftToRightDancer.prototype = Object.create(makeDancer.prototype);
-makeLeftToRightDancer.prototype.constructor = makeLeftToRightDancer;
+LeftToRightDancer.prototype = Object.create(Dancer.prototype);
+LeftToRightDancer.prototype.constructor = LeftToRightDancer;
 
 
-makeLeftToRightDancer.prototype.oldStep = makeDancer.prototype.step;
-makeLeftToRightDancer.prototype.step = function() {
+LeftToRightDancer.prototype.oldStep = Dancer.prototype.step;
+LeftToRightDancer.prototype.step = function() {
   // call the old version of step at the beginning of any call to this new version of step
   this.oldStep();
   // toggle() is a jQuery method to show/hide the <span> tag.
