@@ -30,20 +30,3 @@ body, a:link, a:visited, a:active{
 .danceFloor {
   max-height: 100%;
 }
-
-.bouncey {
-  left:50%;
-  bottom:0;
-  margin-top:-25px;
-  margin-left:-25px;
-  height: 300px;
-  width: 300px;
-  -webkit-animation:bouncey 1s infinite;
-}
-
-@-webkit-keyframes bouncey {
-  0%       { bottom:5px; }
-  25%, 75% { bottom:15px; }
-  50%      { bottom:20px; }
-  100%     {bottom:0;}
-}
